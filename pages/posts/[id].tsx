@@ -2,7 +2,7 @@ import Head from 'next/head'
 import Layout from '../../components/Layout'
 import { getAllPostIds, getPostData } from '../../lib/post'
 
-export default function Post({ postData }) {
+export default function Post({ postData }: any) {
 	return (
 		<Layout>
 			<Head>
@@ -29,7 +29,7 @@ export async function getStaticPaths() {
 	}
 }
 
-export async function getStaticProps({ params }) {
+export async function getStaticProps({ params }: any) {
 	// Fetch necessary data for the blog post using params.id
 	const postData = await getPostData(params.id)
 	return {

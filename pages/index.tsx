@@ -7,7 +7,7 @@ import { getPostsData } from '../lib/post'
 
 const inter = Inter({ subsets: ['latin'] })
 
-export default function Home({ postsData }) {
+export default function Home({ postsData }: any) {
 	return (
 		<>
 			<Head>
@@ -15,7 +15,7 @@ export default function Home({ postsData }) {
 			</Head>
 			<main className={styles.main}>
 				<ul>
-					{postsData.map(post => (
+					{postsData.map((post: any) => (
 						<li key={post.id}>
 							<Link href={`/posts/${post.id}`}>
 								<h2>{post.title}</h2>
